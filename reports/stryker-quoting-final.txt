@@ -1,0 +1,55 @@
+
+   _____ _              _               _   _ ______ _______  
+  / ____| |            | |             | \ | |  ____|__   __| 
+ | (___ | |_ _ __ _   _| | _____ _ __  |  \| | |__     | |    
+  \___ \| __| '__| | | | |/ / _ \ '__| | . ` |  __|    | |    
+  ____) | |_| |  | |_| |   <  __/ |    | |\  | |____   | |    
+ |_____/ \__|_|   \__, |_|\_\___|_| (_)|_| \_|______|  |_|    
+                   __/ |                                      
+                  |___/                                       
+
+
+Version: 5.0.0
+
+A new version of Stryker.NET (5.1.0) is available. Please consider upgrading 
+using `dotnet tool update -g dotnet-stryker`
+
+[13:55:36 INF] Analysis starting.
+[13:55:36 INF] Analyzing 1 test project(s).
+[13:55:38 INF] Picking net10.0 for project D:\Тестування\лаб4\OrderFlow\src\OrderFlow.Domain\OrderFlow.Domain.csproj. 
+[13:55:38 INF] Found project D:\Тестування\лаб4\OrderFlow\src\OrderFlow.Domain\OrderFlow.Domain.csproj to mutate.
+[13:55:38 INF] Analysis complete.
+[13:55:38 INF] Building test project D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\OrderFlow.Domain.Tests.csproj (1/1)
+[13:55:38 INF] Building project OrderFlow.Domain.Tests.csproj using dotnet build OrderFlow.Domain.Tests.csproj -c Debug --property:Platform=AnyCPU (directory D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests.)
+[13:55:46 INF] Number of tests found: 79 for project D:\Тестування\лаб4\OrderFlow\src\OrderFlow.Domain\OrderFlow.Domain.csproj. Initial test run started.
+[13:55:49 INF] 116 mutants created
+[13:55:49 INF] Capture mutant coverage using 'CoverageBasedTest' mode.
+Hint: by passing "--open-report or -o" the report will open automatically and 
+update the report in real-time.
+[13:55:49 INF] 2     mutants got status CompileError. Reason: Mutant caused compile errors
+[13:55:49 INF] 1     mutants got status NoCoverage.   Reason: Not covered by any test.
+[13:55:49 INF] 5     mutants got status Ignored.      Reason: Removed by block already covered filter
+[13:55:49 INF] 46    mutants got status Ignored.      Reason: Removed by mutate filter
+[13:55:49 INF] 54    total mutants are skipped for the above mentioned reasons
+[13:55:49 INF] 62    total mutants will be tested
+
+
+All mutants have been tested, and your mutation score has been calculated
+╭───────────────────────────────┬──────┬───────┬────────┬─────────┬──────┬─────╮
+│ File                          │   %  │    #  │     #  │      #  │ # no │  #  │
+│                               │ sco… │ kill… │ timeo… │ surviv… │  cov │ er… │
+├───────────────────────────────┼──────┼───────┼────────┼─────────┼──────┼─────┤
+│ D:\Тестування\лаб4\OrderFlow\ │ 96,8 │    61 │      0 │      55 │    1 │   2 │
+│ src                           │    3 │       │        │         │      │     │
+│ Entities.cs                   │  N/A │     0 │      0 │      14 │    0 │   0 │
+│ Pricing.cs                    │  N/A │     0 │      0 │      32 │    0 │   0 │
+│ Quoting.cs                    │ 96,8 │    61 │      0 │       9 │    1 │   2 │
+│                               │    3 │       │        │         │      │     │
+╰───────────────────────────────┴──────┴───────┴────────┴─────────┴──────┴─────╯
+
+Your html report has been generated at:
+file://D:/Тестування/лаб4/OrderFlow/tests/OrderFlow.Domain.Tests/StrykerOutput/2
+026-11-26.13-55-36/reports/mutation-report.html
+You can open it in your browser of choice.
+[13:56:14 INF] Time Elapsed 00:00:37.8720589
+[13:56:14 INF] The final mutation score is 96.83 %

@@ -1,0 +1,51 @@
+diff --git a/src/OrderFlow.Domain/Quoting.cs b/src/OrderFlow.Domain/Quoting.cs
+index 788cc29..7aa4cf8 100644
+--- a/src/OrderFlow.Domain/Quoting.cs
++++ b/src/OrderFlow.Domain/Quoting.cs
+@@ -49,7 +49,7 @@ public static class Quoting
+     /// <summary>The volume discount rate for a subtotal: the band rate, plus the VIP bonus when a band rate applies.</summary>
+     public static decimal VolumeRate(decimal subtotal, CustomerTier tier, QuoteRules r)
+     {
+-        decimal rate = subtotal >= r.LargeOrderThreshold ? r.LargeOrderRate
++        decimal rate = subtotal > r.LargeOrderThreshold ? r.LargeOrderRate
+                      : subtotal > r.VolumeThreshold ? r.VolumeRate
+                      : 0m;
+         if (rate > 0m)
+@@ -59,19 +59,19 @@ public static class Quoting
+ 
+     /// <summary>Whether the promo code earns its rate on this quote.</summary>
+     public static bool PromoApplies(string? promoCode, decimal subtotal, bool isFirstOrder, CustomerTier tier, QuoteRules r) =>
+-        CodeMatches(promoCode, r) && subtotal > r.PromoMinimum && (isFirstOrder || tier == CustomerTier.VIP);
++        CodeMatches(promoCode, r) && subtotal >= r.PromoMinimum && (isFirstOrder || tier == CustomerTier.VIP);
+ 
+     /// <summary>The number of parcels for a total quantity: every started parcel counts.</summary>
+     public static int Parcels(int totalQuantity, QuoteRules r)
+     {
+         if (totalQuantity <= 0)
+             return 0;
+-        return (totalQuantity + r.ParcelSize) / r.ParcelSize;
++        return (totalQuantity + r.ParcelSize - 1) / r.ParcelSize;
+     }
+ 
+     /// <summary>Shipping for a net amount: free over the threshold, otherwise the parcel rate per parcel.</summary>
+     public static decimal ShippingFor(decimal net, int parcels, QuoteRules r) =>
+-        net >= r.FreeShippingThreshold ? 0m : parcels * r.ParcelRate;
++        net > r.FreeShippingThreshold ? 0m : parcels * r.ParcelRate;
+ 
+     private static bool CodeMatches(string? promoCode, QuoteRules r) =>
+         !string.IsNullOrWhiteSpace(promoCode)
+@@ -88,12 +88,12 @@ public static class Quoting
+     {
+         foreach (var line in lines)
+         {
+-            if (line.Quantity < 1 || line.Quantity >= r.MaxQuantity)
++            if (line.Quantity < 1 || line.Quantity > r.MaxQuantity)
+                 throw new DomainException($"The quantity of {line.ProductName} must be between 1 and {r.MaxQuantity}.");
+             if (line.UnitPrice < 0m)
+                 throw new DomainException($"The unit price of {line.ProductName} cannot be negative.");
+         }
+     }
+ 
+-    private static decimal Round(decimal v) => Math.Round(v, 2);
++    private static decimal Round(decimal v) => Math.Round(v, 2, MidpointRounding.AwayFromZero);
+ }

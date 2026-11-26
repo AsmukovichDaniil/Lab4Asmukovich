@@ -1,0 +1,14 @@
+  OrderFlow.Domain -> D:\Тестування\лаб4\OrderFlow\src\OrderFlow.Domain\bin\Debug\net10.0\OrderFlow.Domain.dll
+  OrderFlow.Application -> D:\Тестування\лаб4\OrderFlow\src\OrderFlow.Application\bin\Debug\net10.0\OrderFlow.Application.dll
+  OrderFlow.Domain.Tests -> D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\bin\Debug\net10.0\OrderFlow.Domain.Tests.dll
+Test run for D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\bin\Debug\net10.0\OrderFlow.Domain.Tests.dll (.NETCoreApp,Version=v10.0)
+  OrderFlow.Infrastructure -> D:\Тестування\лаб4\OrderFlow\src\OrderFlow.Infrastructure\bin\Debug\net10.0\OrderFlow.Infrastructure.dll
+A total of 1 test files matched the specified pattern.
+  OrderFlow.Api -> D:\Тестування\лаб4\OrderFlow\src\OrderFlow.Api\bin\Debug\net10.0\OrderFlow.Api.dll
+
+Passed!  - Failed:     0, Passed:    79, Skipped:     0, Total:    79, Duration: 36 ms - OrderFlow.Domain.Tests.dll (net10.0)
+  OrderFlow.Smoke -> D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Smoke\bin\Debug\net10.0\OrderFlow.Smoke.dll
+Test run for D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Smoke\bin\Debug\net10.0\OrderFlow.Smoke.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:     5, Skipped:     0, Total:     5, Duration: 1 s - OrderFlow.Smoke.dll (net10.0)

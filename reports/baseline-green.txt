@@ -1,0 +1,16 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  OrderFlow.Domain -> D:\lab2\orderflow-lab4-baseline\src\OrderFlow.Domain\bin\Debug\net10.0\OrderFlow.Domain.dll
+  OrderFlow.Application -> D:\lab2\orderflow-lab4-baseline\src\OrderFlow.Application\bin\Debug\net10.0\OrderFlow.Application.dll
+  OrderFlow.Domain.Tests -> D:\lab2\orderflow-lab4-baseline\tests\OrderFlow.Domain.Tests\bin\Debug\net10.0\OrderFlow.Domain.Tests.dll
+Test run for D:\lab2\orderflow-lab4-baseline\tests\OrderFlow.Domain.Tests\bin\Debug\net10.0\OrderFlow.Domain.Tests.dll (.NETCoreApp,Version=v10.0)
+  OrderFlow.Infrastructure -> D:\lab2\orderflow-lab4-baseline\src\OrderFlow.Infrastructure\bin\Debug\net10.0\OrderFlow.Infrastructure.dll
+A total of 1 test files matched the specified pattern.
+  OrderFlow.Api -> D:\lab2\orderflow-lab4-baseline\src\OrderFlow.Api\bin\Debug\net10.0\OrderFlow.Api.dll
+
+Passed!  - Failed:     0, Passed:    33, Skipped:     0, Total:    33, Duration: 32 ms - OrderFlow.Domain.Tests.dll (net10.0)
+  OrderFlow.Smoke -> D:\lab2\orderflow-lab4-baseline\tests\OrderFlow.Smoke\bin\Debug\net10.0\OrderFlow.Smoke.dll
+Test run for D:\lab2\orderflow-lab4-baseline\tests\OrderFlow.Smoke\bin\Debug\net10.0\OrderFlow.Smoke.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:     5, Skipped:     0, Total:     5, Duration: 1 s - OrderFlow.Smoke.dll (net10.0)

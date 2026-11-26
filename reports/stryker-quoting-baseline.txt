@@ -1,0 +1,10 @@
+Command: dotnet stryker -m "**/Quoting.cs" --reporter cleartext
+Source revision: 0558cb3 OrderFlow 1.3 as received; no Quoting tests existed.
+115 mutants created
+2 mutants got status CompileError
+62 mutants got status NoCoverage
+5 mutants ignored (block already covered)
+46 mutants ignored (mutate filter)
+115 total mutants skipped; 0 total mutants tested
+Quoting.cs: score 0.00%, killed 0, surviving 69, no coverage 62, compile errors 2
+The final mutation score is 0.00 %
