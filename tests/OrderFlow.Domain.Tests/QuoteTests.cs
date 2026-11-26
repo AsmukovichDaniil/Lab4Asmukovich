@@ -40,6 +40,13 @@ public class QuoteTests
             .Should().Be(default(Quote));
     }
 
+    [Fact]
+    public void Parcels_for_zero_items_are_zero()
+    {
+        Quoting.Parcels(0, QuotePolicy.Rules).Should().Be(0,
+            "a quote with no items starts no parcel");
+    }
+
     [Theory]
     [InlineData(0)] // T3 below minimum
     [InlineData(-1)]
