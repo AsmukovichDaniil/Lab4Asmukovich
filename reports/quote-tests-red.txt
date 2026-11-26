@@ -1,0 +1,106 @@
+  OrderFlow.Domain -> D:\Тестування\лаб4\OrderFlow\src\OrderFlow.Domain\bin\Debug\net10.0\OrderFlow.Domain.dll
+  OrderFlow.Domain.Tests -> D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\bin\Debug\net10.0\OrderFlow.Domain.Tests.dll
+Test run for D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\bin\Debug\net10.0\OrderFlow.Domain.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.22]     OrderFlow.Domain.Tests.QuoteTests.Volume_discount_rate_follows_the_band_and_customer_tier(subtotal: 5000, tier: Regular, expectedRate: 0,1) [FAIL]
+  Failed OrderFlow.Domain.Tests.QuoteTests.Volume_discount_rate_follows_the_band_and_customer_tier(subtotal: 5000, tier: Regular, expectedRate: 0,1) [43 ms]
+  Error Message:
+   Expected Quoting.VolumeRate(subtotal, tier, QuotePolicy.Rules) to be 0.1M because the policy assigns 10% at subtotal 5000, but found 0.15M (difference of 0.05).
+  Stack Trace:
+     at FluentAssertions.Execution.LateBoundTestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at OrderFlow.Domain.Tests.QuoteTests.Volume_discount_rate_follows_the_band_and_customer_tier(Decimal subtotal, CustomerTier tier, Decimal expectedRate) in D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\QuoteTests.cs:line 95
+   at InvokeStub_QuoteTests.Volume_discount_rate_follows_the_band_and_customer_tier(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:00.23]     OrderFlow.Domain.Tests.QuoteTests.T36_Half_cent_discount_rounds_away_from_zero [FAIL]
+  Failed OrderFlow.Domain.Tests.QuoteTests.T36_Half_cent_discount_rounds_away_from_zero [2 ms]
+  Error Message:
+   Expected quote.Discount to be 150.05M because 150.045 is a half-cent and the policy rounds away from zero, but found 150.04M (difference of -0.01).
+  Stack Trace:
+     at FluentAssertions.Execution.LateBoundTestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at OrderFlow.Domain.Tests.QuoteTests.T36_Half_cent_discount_rounds_away_from_zero() in D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\QuoteTests.cs:line 176
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:00.23]     OrderFlow.Domain.Tests.QuoteTests.Parcel_count_uses_each_started_variant_sized_parcel(quantity: 12, expected: 1) [FAIL]
+[xUnit.net 00:00:00.23]     OrderFlow.Domain.Tests.QuoteTests.Valid_quantity_boundaries_are_accepted(quantity: 100) [FAIL]
+  Failed OrderFlow.Domain.Tests.QuoteTests.Parcel_count_uses_each_started_variant_sized_parcel(quantity: 12, expected: 1) [< 1 ms]
+  Error Message:
+   Expected Quoting.Parcels(quantity, QuotePolicy.Rules) to be 1 because P is 12; every started parcel counts, but found 2.
+  Stack Trace:
+     at FluentAssertions.Execution.LateBoundTestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at OrderFlow.Domain.Tests.QuoteTests.Parcel_count_uses_each_started_variant_sized_parcel(Int32 quantity, Int32 expected) in D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\QuoteTests.cs:line 147
+   at InvokeStub_QuoteTests.Parcel_count_uses_each_started_variant_sized_parcel(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Failed OrderFlow.Domain.Tests.QuoteTests.Valid_quantity_boundaries_are_accepted(quantity: 100) [< 1 ms]
+  Error Message:
+   OrderFlow.Domain.DomainException : The quantity of Test item must be between 1 and 100.
+  Stack Trace:
+     at OrderFlow.Domain.Quoting.Validate(IReadOnlyCollection`1 lines, QuoteRules r) in D:\Тестування\лаб4\OrderFlow\src\OrderFlow.Domain\Quoting.cs:line 92
+   at OrderFlow.Domain.Quoting.Calculate(IReadOnlyCollection`1 lines, CustomerTier tier, String promoCode, Boolean isFirstOrder, QuoteRules r) in D:\Тестування\лаб4\OrderFlow\src\OrderFlow.Domain\Quoting.cs:line 33
+   at OrderFlow.Domain.Tests.QuoteTests.Valid_quantity_boundaries_are_accepted(Int32 quantity) in D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\QuoteTests.cs:line 58
+   at InvokeStub_QuoteTests.Valid_quantity_boundaries_are_accepted(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:00.24]     OrderFlow.Domain.Tests.QuoteTests.T22_T24_Promo_minimum_uses_the_variant_boundary(subtotal: 150, expected: True) [FAIL]
+[xUnit.net 00:00:00.24]     OrderFlow.Domain.Tests.QuoteTests.Shipping_is_free_only_above_the_variant_net_threshold(net: 2000, expected: 50) [FAIL]
+  Failed OrderFlow.Domain.Tests.QuoteTests.T22_T24_Promo_minimum_uses_the_variant_boundary(subtotal: 150, expected: True) [1 ms]
+  Error Message:
+   Expected Quoting.PromoApplies("WELCOME", subtotal, true, CustomerTier.Regular, QuotePolicy.Rules) to be True because M is 150 and qualification is inclusive, but found False.
+  Stack Trace:
+     at FluentAssertions.Execution.LateBoundTestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Primitives.BooleanAssertions`1.Be(Boolean expected, String because, Object[] becauseArgs)
+   at OrderFlow.Domain.Tests.QuoteTests.T22_T24_Promo_minimum_uses_the_variant_boundary(Decimal subtotal, Boolean expected) in D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\QuoteTests.cs:line 114
+   at InvokeStub_QuoteTests.T22_T24_Promo_minimum_uses_the_variant_boundary(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:00.24]     OrderFlow.Domain.Tests.QuoteTests.T25_Vip_earns_the_promo_at_the_minimum_even_when_the_order_is_not_first [FAIL]
+  Failed OrderFlow.Domain.Tests.QuoteTests.Shipping_is_free_only_above_the_variant_net_threshold(net: 2000, expected: 50) [< 1 ms]
+  Error Message:
+   Expected Quoting.ShippingFor(net, 1, QuotePolicy.Rules) to be 50M because F is 2000 and the policy says over, but found 0M (difference of -50).
+  Stack Trace:
+     at FluentAssertions.Execution.LateBoundTestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at OrderFlow.Domain.Tests.QuoteTests.Shipping_is_free_only_above_the_variant_net_threshold(Decimal net, Decimal expected) in D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\QuoteTests.cs:line 168
+   at InvokeStub_QuoteTests.Shipping_is_free_only_above_the_variant_net_threshold(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Failed OrderFlow.Domain.Tests.QuoteTests.T25_Vip_earns_the_promo_at_the_minimum_even_when_the_order_is_not_first [< 1 ms]
+  Error Message:
+   Expected Quoting.PromoApplies("WELCOME", QuotePolicy.Rules.PromoMinimum, false, CustomerTier.VIP, QuotePolicy.Rules) to be True because VIP customers qualify and the minimum is inclusive, but found False.
+  Stack Trace:
+     at FluentAssertions.Execution.LateBoundTestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Primitives.BooleanAssertions`1.BeTrue(String because, Object[] becauseArgs)
+   at OrderFlow.Domain.Tests.QuoteTests.T25_Vip_earns_the_promo_at_the_minimum_even_when_the_order_is_not_first() in D:\Тестування\лаб4\OrderFlow\tests\OrderFlow.Domain.Tests\QuoteTests.cs:line 139
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Failed!  - Failed:     7, Passed:    66, Skipped:     0, Total:    73, Duration: 67 ms - OrderFlow.Domain.Tests.dll (net10.0)
